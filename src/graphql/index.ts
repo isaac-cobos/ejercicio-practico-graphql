@@ -5,7 +5,9 @@ import { makeExecutableSchema } from 'graphql-tools';
 //Esto es para que node pueda entender que archivos son.
 import 'graphql-import-node';
 import rootSchema from './schemas/schema.graphql';
+import resolvers from './resolvers/resolversMap';
 
 export const schema: GraphQLSchema = makeExecutableSchema({
   typeDefs: [rootSchema],
+  resolvers,
 });
